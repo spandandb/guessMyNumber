@@ -22,7 +22,7 @@ document.querySelector(".check").addEventListener("click", function () {
     // only keep playing until the user has attempts left
     if (userGuess === secretNumber) {
       // when user guess matches the random number
-      msg.textContent = "Hurray !!! You win ";
+      msg.textContent = "Hurray !!! You win ✅";
       disableUserInput();
       document.body.style.backgroundColor = "#60b347";
       document.querySelector(".number").style.width = "30rem";
@@ -30,16 +30,16 @@ document.querySelector(".check").addEventListener("click", function () {
       return;
     } else if (userGuess > secretNumber) {
       // when user guess is higher than the random number
-      msg.textContent = " Oh No !!! Too High ";
+      msg.textContent = " Oh No !!! Too High 📈";
     } else if (userGuess < secretNumber) {
       // when the user guess is lower than the random number
-      msg.textContent = " Oh No !!! Too Low ";
+      msg.textContent = " Oh No !!! Too Low 📉";
     }
     score--;
     document.querySelector(".score").textContent = score;
     if (score === 0) {
       disableUserInput();
-      msg.textContent = "Press Again Button to restart.";
+      msg.textContent = "Press Again Button to Restart 🔃";
     }
   }
 });
