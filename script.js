@@ -6,8 +6,10 @@ let secretNumber = Math.trunc(Math.random() * 30) + 1;
 // number of tries remaining counter variable
 let score = 10;
 
+// variable to store the highest score
 let highScore = 0;
 
+// declaring in a variable as it has been used multiple times
 const msg = document.querySelector(".message");
 const guess = document.querySelector(".guess");
 
@@ -54,18 +56,25 @@ document.querySelector(".check").addEventListener("click", function () {
 
 // implementating functionality of Again button
 document.querySelector(".again").addEventListener("click", function () {
+  // generating new random number
   secretNumber = Math.trunc(Math.random() * 30) + 1;
+
+  // mresetting the no. of attempts and changing the value in the DOM
   score = 10;
   document.querySelector(".score").textContent = 10;
+
   const guess = document.querySelector(".guess");
   const check = document.querySelector(".check");
 
+  // removing the attribute as the btn should no longer be disabled
   guess.removeAttribute("disabled");
   check.removeAttribute("disabled");
 
+  // removing the css for disabled state
   guess.classList.remove("disabled");
   check.classList.remove("disabled");
 
+  // taking back the html and css to the initial state
   document.body.style.backgroundColor = "#222";
   document.querySelector(".number").style.width = "15rem";
 
